@@ -5,7 +5,10 @@ class Mycomponent extends React.Component {
     //JSX
     render() {
         return (
-            <div>My first component</div>
+            <div>
+                My first component
+                {Math.random()}
+            </div>
         );
     }
 }

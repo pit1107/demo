@@ -11,6 +11,7 @@ const App = () => {
   return (
 
     <div>
+      Hello Phatdeptrai
       <Mycomponent></Mycomponent>
     </div>
     // <div className="App">
