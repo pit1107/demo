@@ -9,7 +9,7 @@ class Mycomponent extends React.Component {
     };
 
 
-
+    // arrow function ... = ... => {}
     handleClick = (event) => {
         console.log('Xin chao: ', this.state.name);
         // console.log(event);
@@ -22,6 +22,22 @@ class Mycomponent extends React.Component {
     handleOnMoverOver(event) {
         console.log(event.pageX);
     }
+
+    handleOnChangeInput = (event) => {
+        this.setState({
+            name: event.target.value
+        })
+        // console.log(event,event.target.value);
+    }
+
+    // Dung o form toi uu hon dung o button
+    handleClickButton = (event) => {
+        event.preventDefault()
+        console.log('event.target.value');
+
+        alert(this.state.name);
+    }
+
     //JSX
     render() {
         return (
@@ -29,8 +45,16 @@ class Mycomponent extends React.Component {
                 My first component
 
                 My name is {this.state.name} and I'm {this.state.age}
-                <button onMouseOver={this.handleOnMoverOver}>Hover me</button>
                 <button onClick={(event) => { this.handleClick(event) }}>Click me</button>
+                <form onSubmit={(event) => { this.handleClickButton(event) }}>
+                    <input
+                        type="text"
+                        onChange={(event) => {
+                            this.handleOnChangeInput(event)
+                        }}
+                    />
+                    <button>Submit</button>
+                </form>
             </div>
         );
     }
